@@ -1,10 +1,9 @@
-# This is a sample Python script.
 
-from queue import Queue
-from binary_tree import Node,topDown,downTop,rightLeft,leftRight, printTree
-
+from stack import Stack
+from binary_tree import Node,topDown,downTop,rightLeft,leftRight,printTree
 if __name__ == '__main__':
-    q = Queue(5)
+    print('a')
+    q = Stack(5)
 
     q.push('a')
     q.push('b')

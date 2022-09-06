@@ -7,32 +7,32 @@ class Node:
 def leftRight(root):
     "visiting nodes from left to right"
     if root:
-        topdown(root.childLeft)
+        leftRight(root.childLeft)
         print(root.label)
-        topdown(root.childRight)
+        leftRight(root.childRight)
 
 def rightLeft(root):
     "visiting nodes from left to right"
     if root:
-        topdown(root.childRight)
+        rightLeft(root.childRight)
         print(root.label)
-        topdown(root.childLeft)
+        rightLeft(root.childLeft)
 
 def downTop(root):
     if root:
-        topdown(root.childLeft)
-        topdown(root.childRight)
+        downTop(root.childLeft)
+        downTop(root.childRight)
         print(root.label)
 
 def topDown(root):
     if root:
         print(root.label)
-        topdown(root.childLeft)
-        topdown(root.childRight)
+        topDown(root.childLeft)
+        topDown(root.childRight)
 
 
 def printTree(node, level = 0):
     if node != None:
-        printTree(node.left, level + 1)
-        print(' ' * 4 * level + '-> ' + node.value)
-        printTree(node.right, level + 1)
+        printTree(node.childRight, level + 1)
+        print(' ' * 4 * level + '-> ' + node.label)
+        printTree(node.childLeft, level + 1)
